@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO On-Page Profesional -->
+    <title>elhospitalelectronico | Guía de Mantenimiento de Computadoras</title>
+    <meta name="description" content="Portal informativo sobre diagnósticos técnicos, prevención de fallas hardware y optimización de computadoras en Floridablanca. Gestionado por PEREZ INGRID KATERINE SANTANA.">
+    <meta name="keywords" content="elhospitalelectronico, mantenimiento de computadoras, reparacion de pc floridablanca, diagnostico informatico, soporte tecnico pc, ingrid katerine santana">
+    <meta name="author" content="PEREZ INGRID KATERINE SANTANA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tu-dominio.com/index.html">
+    
+    <!-- Tipografía Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables CSS Tema Tech Clean */
+        :root {
+            --primary: #0f172a;
+            --accent: #0284c7;
+            --accent-light: #e0f2fe;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --transition: all 0.25s ease-in-out;
+        }
+
+        /* Reset Básico */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; color: var(--primary); }
+        a { text-decoration: none; color: inherit; }
+
+        /* Navigation Bar */
+        .header-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand-logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand-logo span { color: var(--accent); }
+        .btn-main {
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .btn-main:hover { background-color: #0369a1; transform: translateY(-1px); }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 4rem 5%;
+            background: radial-gradient(circle at top right, var(--accent-light), transparent 40%), var(--bg-light);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 75vh;
+        }
+        .hero-title { font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.15; margin-bottom: 1.25rem; }
+        .hero-sub { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; font-weight: 400; }
+        .hero-image-box {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+        .hero-image-box img { width: 100%; border-radius: 8px; height: auto; display: block; }
+
+        /* Secciones */
+        .section-padding { padding: 4.5rem 5%; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 0.75rem; }
+        .section-sub { text-align: center; color: var(--text-muted); max-width: 650px; margin: 0 auto 3rem; }
+
+        /* Beneficios */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .card-item:hover { border-color: var(--accent); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.04); }
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Propuesta de Valor */
+        .features-wrapper {
+            background: #ffffff;
+            border-radius: var(--radius);
+            padding: 3rem;
+            border: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .features-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .features-list li { display: flex; gap: 12px; align-items: flex-start; }
+        .check-mark { color: var(--accent); font-weight: bold; }
+
+        /* Transparencia / Social Proof Informático */
+        .transparency-box {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: var(--radius);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .transparency-box h3 { color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; }
+        .transparency-box p { opacity: 0.85; font-size: 1rem; line-height: 1.7; }
+
+        /* Formulario y Contacto */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .info-card {
+            background: var(--accent-light);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+        }
+        .info-card h3 { margin-bottom: 1.25rem; }
+        .info-line { margin-bottom: 1rem; font-size: 0.95rem; }
+        .info-line strong { color: var(--primary); }
+
+        .form-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        .form-control:focus { outline: 2px solid var(--accent); border-color: transparent; }
+        .alert-success {
+            display: none;
+            background: #dcfce7;
+            color: #15803d;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 5% 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+        .footer-nav { text-align: center; margin-bottom: 1.5rem; }
+        .footer-nav a { color: #f1f5f9; margin: 0 12px; text-decoration: underline; }
+        .footer-notice { max-width: 800px; margin: 0 auto; text-align: center; opacity: 0.6; line-height: 1.5; }
+
+        /* Responsive Design */
+        @media (max-width: 868px) {
+            .hero-section, .contact-grid { grid-template-columns: 1fr; }
+            .section-padding { padding: 3rem 5%; }
+            .features-wrapper { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header class="header-nav">
+        <div class="brand-logo">elhospitalelectronico <span>.</span></div>
+        <a href="#contacto" class="btn-main">Consulta disponibilidad de revisión para tu equipo</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div>
+            <h1 class="hero-title">Orientación Técnica para el Mantenimiento de tu Computadora</h1>
+            <p class="hero-sub">Accede a información técnica clara sobre prevención de fallas, diagnósticos térmicos y buenas prácticas de hardware para computadoras de escritorio y portátiles en Floridablanca.</p>
+            <a href="#contacto" class="btn-main">Consulta disponibilidad de revisión para tu equipo</a>
+        </div>
+        <div class="hero-image-box">
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800" alt="Mantenimiento e inspección de hardware informático">
+        </div>
+    </section>
+
+    <!-- Beneficios Informativos -->
+    <section class="section-padding">
+        <h2 class="section-title">Conceptos Clave de Mantenimiento</h2>
+        <p class="section-sub">Entender el funcionamiento interno de tu equipo extiende su vida útil y previene pérdidas imprevistas de información.</p>
+        
+        <div class="grid-cards">
+            <div class="card-item">
+                <div class="card-icon">01</div>
+                <h3>Control Térmico</h3>
+                <p>La acumulación de polvo en disipadores obstruye el flujo de aire, generando sobrecalentamiento y degradación progresiva de los procesadores.</p>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">02</div>
+                <h3>Salud del Almacenamiento</h3>
+                <p>Monitorear los valores de unidades SSD y discos duros permite detectar sectores defectuosos antes de que ocurra una falla crítica.</p>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">03</div>
+                <h3>Optimización Lógica</h3>
+                <p>La limpieza de archivos temporales y la gestión de procesos en segundo plano mantienen la fluidez del sistema operativo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propuesta de Valor -->
+    <section class="section-padding" style="background-color: #ffffff;">
+        <div class="features-wrapper">
+            <h2 class="section-title" style="margin-bottom: 2rem;">¿Qué Guiamos en el Portal?</h2>
+            <ul class="features-list">
+                <li>
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>Mantenimiento Preventivo:</strong> Criterios sobre cuándo realizar cambio de pasta térmica y limpieza física interna.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>Diagnóstico de Errores:</strong> Interpretación de códigos de pantalla azul (BSOD) y pitidos de la placa madre.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>Actualización de Hardware:</strong> Asesoría sobre compatibilidad de memorias RAM y unidades de almacenamiento.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-mark">✓</span>
+                    <div>
+                        <strong>Seguridad Operativa:</strong> Buenas prácticas sobre fuentes de poder, respaldos de información y protección eléctrica.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Prueba Social / Declaración Honestidad -->
+    <section class="section-padding">
+        <div class="transparency-box">
+            <h3>Compromiso de Transparencia</h3>
+            <p>"En elhospitalelectronico nos enfocamos en brindar información técnica verificable. No prometemos reparaciones milagrosas ni aceleraciones irreales de equipos obsoletos. Cada arquitectura de computador tiene límites físicos definidos; nuestra labor es orientar al usuario para que tome decisiones fundamentadas respecto a su tecnología."</p>
+            <p style="margin-top: 1.5rem; font-weight: 600; font-size: 0.9rem; color: var(--accent-light);">— PEREZ INGRID KATERINE SANTANA, Gestión Informativa</p>
+        </div>
+    </section>
+
+    <!-- Formulario y Transparencia Empresarial -->
+    <section class="section-padding" id="contacto">
+        <div class="section-title">Canal de Consulta Informativa</div>
+        <p class="section-sub">Resuelve tus dudas sobre tipos de mantenimiento o consulta la disponibilidad para revisiones técnicas presenciales.</p>
+        
+        <div class="contact-grid">
+            <div class="info-card">
+                <h3>Datos de Transparencia</h3>
+                <div class="info-line"><strong>Nombre Titular:</strong> PEREZ INGRID KATERINE SANTANA</div>
+                <div class="info-line"><strong>Ubicación Física:</strong> Cra. 14 #50-30, Floridablanca, Colombia</div>
+                <div class="info-line"><strong>Teléfono Contacto:</strong> 3002675482</div>
+                <div class="info-line"><strong>Correo Electrónico:</strong> k.tisdale06@gmail.com</div>
+                <div class="info-line"><strong>Horario Atendido:</strong> Lunes a Domingo: 8:00am a 5:00pm</div>
+            </div>
+
+            <div class="form-card">
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" class="form-control" required placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Número Telefónico</label>
+                        <input type="tel" id="telefono" class="form-control" required placeholder="Ej. 3001234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo_equipo">Tipo de Equipo</label>
+                        <select id="tipo_equipo" class="form-control" required>
+                            <option value="">Selecciona...</option>
+                            <option value="portatil">Computador Portátil (Laptop)</option>
+                            <option value="escritorio">Computador de Escritorio (PC)</option>
+                            <option value="otro">Otro Componente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Detalle de la Consulta</label>
+                        <textarea id="mensaje" class="form-control" rows="3" required placeholder="Describe brevemente la falla o inquietud técnica..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-main" style="width: 100%;">Solicitar Información Técnica</button>
+                    
+                    <div class="alert-success" id="alertSuccess">
+                        Consulta enviada correctamente. Se atenderá la solicitud dentro del horario establecido (8:00am a 5:00pm).
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <a href="politica-de-privacidad.html">Política de Privacidad</a>
+            <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        </div>
+        <p style="text-align: center; margin-bottom: 1rem;">&copy; 2026 elhospitalelectronico. Administrado por PEREZ INGRID KATERINE SANTANA.</p>
+        <p class="footer-notice">Exoneración Legal: El contenido expuesto en este portal tiene propósitos netamente educacionales e informativos sobre mantenimiento informático. No constituye garantía implícita de recuperación de datos ni reemplaza el diagnóstico presencial especializado. No se ofrecen suplementos, promesas financieras ni servicios restringidos.</p>
+    </footer>
+
+    <!-- JavaScript Integrado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('leadForm');
+            const alert = document.getElementById('alertSuccess');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert.style.display = 'block';
+                form.reset();
+
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
